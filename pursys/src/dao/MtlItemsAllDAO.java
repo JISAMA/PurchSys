@@ -54,6 +54,7 @@ public class MtlItemsAllDAO {
 			getCurrentSession().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
+			System.out.println("插入失败");
 			log.error("save failed", re);
 			throw re;
 		}

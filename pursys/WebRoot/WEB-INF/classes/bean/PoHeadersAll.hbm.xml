@@ -6,15 +6,16 @@
 -->
 <hibernate-mapping>
     <class name="bean.PoHeadersAll" table="po_headers_all" catalog="purchsys">
-        <id name="poHeaderId" type="java.lang.Integer">
-            <column name="Po_header_id" />
-            <generator class="identity" />
-        </id>
+        <composite-id name="id" class="bean.PoHeadersAllId">
+            <key-property name="poHeaderId" type="java.lang.Integer">
+                <column name="Po_header_id" />
+            </key-property>
+            <key-property name="venderCode" type="java.lang.Integer">
+                <column name="Vender_code" />
+            </key-property>
+        </composite-id>
         <property name="poNum" type="java.lang.String">
             <column name="Po_num" length="50" not-null="true" />
-        </property>
-        <property name="venderCode" type="java.lang.Integer">
-            <column name="Vender_code" not-null="true" />
         </property>
         <property name="status" type="java.lang.Integer">
             <column name="Status" not-null="true" />

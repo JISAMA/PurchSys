@@ -8,16 +8,13 @@
     <class name="bean.PoSaveFrom" table="po_save_from" catalog="purchsys">
         <id name="poPlanCode" type="java.lang.Integer">
             <column name="Po_plan_code" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="itemNum" type="java.lang.Integer">
             <column name="Item_num" not-null="true" />
         </property>
         <property name="qty" type="java.lang.Integer">
             <column name="Qty" not-null="true" />
-        </property>
-        <property name="venderCode" type="java.lang.Integer">
-            <column name="Vender_code" not-null="true" />
         </property>
         <property name="status" type="java.lang.Integer">
             <column name="Status" not-null="true" />

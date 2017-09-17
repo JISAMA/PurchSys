@@ -1,0 +1,24 @@
+.button-style{
+    margin-left: 45%;
+    margin-top: 15px;
+}
+
+.mouse-style{
+    cursor: pointer;
+}
+.white{
+    color: #fff;
+}
+.background-color{
+    background: #426374;
+}
+.font{
+    color: white;
+    font-family: "Microsoft Yahei", Verdana, Simsun, "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", "Segoe UI Symbol", "Helvetica Neue", Arial;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+
+

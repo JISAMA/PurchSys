@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<package name="hrPerson" extends="json-default" namespace="/">
+<package name="hrPerson" extends="json-default,struts-default" namespace="/">
 <action name="hrPerson_Operate_*" class="hrPersonAction" method="{1}">
 <result name="success" type="json">
 <param name="root">persons</param>
+</result>
+<result name="get" type="json">
+<param name="root">p</param>
 </result>
 </action>
 <action name="item_Operate_*" class="itemAction" method="{1}">
 <result name="success" type="json">
 <param name="root">items</param>
+</result>
+</action>
+<action name="save_Operate_*" class="poSaveAction" method="{1}">
+<result name="planlist" type="json">
+<param name="root">plans</param>
+</result>
+</action>
+</package>
+
+
+
+
+<package name="login" extends="struts-default" namespace="/">
+<action name="login_*" class="loginAction" method="{1}" >
+<result name="loginsucc">
+/index.jsp
+</result>
+<result name="fail">
+/login.jsp
 </result>
 </action>
 </package>

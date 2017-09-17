@@ -8,94 +8,256 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+    <meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.7/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="lib/icheck/icheck.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-    
-    <title>My JSP 'index.jsp' starting page</title>
-    <meta charset="utf-8">
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-  </head>
-  
-  <body>
-  <div class="mt-20">
-		<table id="stuTable" class="table table-border table-bordered table-bg table-hover table-sort">
-			<thead>
-				<tr class="text-c">
-					<th width="40"><input name="" type="checkbox" value=""></th>
-					<th width="80">学号</th>
-					<th width="100">班级</th>
-					<th width="100">姓名</th>
-					<th width="80">性别</th>
-					<th width="100">学费</th>
-					<th width="150">联系方式</th>
-					<th width="150">邮箱</th>
-					<th width="100">操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="text-c" class="con">
-					<td><input name="" type="checkbox" value=""></td>
-					<td class="stuId">14108102</td>
-					<td class="classId">14108411</td>
-					<td class="stuName">神经<!--<a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="100" class="picture-thumb" src="pic/200x150.jpg"></a>--></td>
-					<!--<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">现代简约 白色 餐厅</a></td>
-					<td class="text-c">标签</td>
-					<td>2014-6-11 11:11:42</td>
-					<td class="td-status"><span class="label label-success radius">已发布</span></td>-->
-					<td class="stuSex">女</td>
-					<td class="fee">6700</td>
-					<td class="tel">17764591371</td>
-					<td class="email">1325594220@qq.com</td>
-					<td class="td-manage">
-					 <a class="edit" style="text-decoration:none" class="ml-5 Edit"  title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-					 <a style="text-decoration:none" class="ml-5" onClick="student_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-				</tr>
-			</tbody>
-		</table>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>采购系统</title>
+<meta name="keywords" content="H-ui.admin v2.5,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v2.5，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">采购系统</a>
+			<nav class="nav navbar-nav">
+				<ul class="cl">
+					<!--<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onclick="article_add('添加资讯','good-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+							<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+							<li><a href="javascript:;" onclick="product_add('添加资讯','goodNeed-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+							<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+						</ul>
+					</li>-->
+				</ul>
+			</nav>
+			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover"> <%=session.getAttribute("user") %> <i class="Hui-iconfont">&#xe6d5;</i>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="login.jsp">退出</a></li>
+						</ul>
+					</li>
+					<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+							<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+							<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+							<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+							<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+							<li><a href="javascript:;" data-val="orange" title="绿色">橙色</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
+</header>
+<aside class="Hui-aside">
+	<input runat="server" id="divScrollValue" type="hidden" value="" />
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 物品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="good-list.jsp" data-title="物品管理" href="javascript:void(0)">物品信息维护</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 需求管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="planSave.jsp" data-title="需求管理" href="javascript:void(0)">采购申请</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 采购管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="plan-list.jsp" data-title="采购计划" href="javascript:void(0)">采购计划</a></li>
+					<li><a data-href="product-brand.html" data-title="采购订单" href="javascript:void(0)">采购订单</a></li>
+					<li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">订单审批</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> 员工管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					
+					<li><a data-href="person-list.jsp" data-title="员工管理" href="javascript:void(0)">员工管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<!--<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="member-list.html" data-title="会员列表" href="javascript:;">会员列表</a></li>
+					<li><a data-href="member-del.html" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
+					<li><a data-href="member-level.html" data-title="等级管理" href="javascript:;">等级管理</a></li>
+					<li><a data-href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li>
+					<li><a data-href="member-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
+					<li><a data-href="member-record-download.html" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
+					<li><a data-href="member-record-share.html" data-title="分享记录" href="javascript:void(0)">分享记录</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="admin-role.html" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
+					<li><a data-href="admin-permission.html" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+					<li><a data-href="admin-list.html" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 系统统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="charts-1.html" data-title="折线图" href="javascript:void(0)">折线图</a></li>
+					<li><a data-href="charts-2.html" data-title="时间轴折线图" href="javascript:void(0)">时间轴折线图</a></li>
+					<li><a data-href="charts-3.html" data-title="区域图" href="javascript:void(0)">区域图</a></li>
+					<li><a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a></li>
+					<li><a data-href="charts-5.html" data-title="饼状图" href="javascript:void(0)">饼状图</a></li>
+					<li><a data-href="charts-6.html" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a></li>
+					<li><a data-href="charts-7.html" data-title="3D饼状图" href="javascript:void(0)">3D饼状图</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
+					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
+					<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
+					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
+					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
+				</ul>
+			</dd>
+		</dl>-->
+	</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<section class="Hui-article-box">
+	<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+		<div class="Hui-tabNav-wp">
+			<ul id="min_title_list" class="acrossTab cl">
+				<li class="active"><span title="我的桌面" data-href="welcome.html">我的桌面</span><em></em></li>
+			</ul>
+		</div>
+		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
+	</div>
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="welcome.jsp"></iframe>
+		</div>
+	</div>
+</section>
+
+<div class="contextMenu" id="myMenu1">
+	<ul>
+		<li id="open">Open </li>
+		<li id="email">email </li>
+		<li id="save">save </li>
+		<li id="delete">delete </li>
+	</ul>
 </div>
-  <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+
+
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="lib/layer/2.1/layer.js"></script> 
-<script type="text/javascript" src="lib/My97DatePicker/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script> 
 <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script> 
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> 
-   <script type="text/javascript">
-   $(document).ready(function(){
-$.ajax({
-		type:"GET",
-		url:"hrPerson_Operate_findAllPerson.action",
-		dataType:"json",
-		success:function(data){
-				for(var i=0;i<data.length;i++){
-				var person=data[i];
-				$("#stuTable").append("<tr class='text-c'><td><input name='' type='checkbox' value=''></td><td>"+person.empNum+"</td>"+
-				      "<td>"+person.name+"</td>"+
-				      "<td>"+person.managerEmpNum+"</td>"+
-				      "<td>"+person.job+"</td>"+
-				      "<td>"+person.department+"</td>"+
-				      "<td>"+0+"</td>"+
-				      "<td>"+0+"</td>"+
-				      "<td><a style='text-decoration:none' class='Edit ml-5' title='编辑'><i class='Hui-iconfont'>&#xe6df;</i></a>"+
-					 "<a style='text-decoration:none' class='ml-5 deleteClick' title='删除'><i class='Hui-iconfont'>&#xe6e2;</i></a></td></tr>");
-				}
-		},
-		error:function(jqXHR){
-			alert("发生错误："+jqXHR.status);
+<script type="text/javascript">
+$(function(){
+	$(".Hui-tabNav-wp").contextMenu('myMenu1', {
+		bindings: {
+			'open': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Open');
+			},
+			'email': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Email');
+			},
+			'save': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Save');
+			},
+			'delete': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Delete')
+			}
 		}
 	});
+});
+/*资讯-添加*/
+function article_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
 	});
-   </script>
-  </body>
+	layer.full(index);
+}
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*产品-添加*/
+function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*用户-添加*/
+function member_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+</script> 
+
+<!--此乃百度统计代码，请自行删除-->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s)})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!--/此乃百度统计代码，请自行删除-->
+</body>
 </html>

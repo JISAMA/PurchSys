@@ -29,6 +29,10 @@ public class ItemService {
 		return items;
 		
 	}
+	public void addItem(MtlItemsAll item){
+		mtlItemsAllDAO.save(item);
+		
+	}
 
 	public MtlItemsAllDAO getMtlItemsAllDAO() {
 		return mtlItemsAllDAO;

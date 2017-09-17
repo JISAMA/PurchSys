@@ -1,0 +1,37 @@
+$(document).ready(function () {
+    $("#good_add").click(function () {
+        var gname=$("#good_desccrip").text();
+        var gdes=$("#good_desccrip").text();
+        var type
+      $.each($("input[type='radio']"),function (i,item) {
+          var checked = $(item).prop("checked");
+          if(checked){
+              type=$(item).attr("name");
+          }
+      })
+        var good={
+            "itemName":gname,
+            "itemDesp":gdes,
+            "itemType":type
+        }
+        $.ajax({
+            type:"POST",
+            url:"",
+            data:good,
+            datatype:"json",
+            success:function () {
+                alert("add success!");
+            },
+            error:function () {
+                alert("add fail");
+            }
+
+        });
+
+
+
+
+    });
+
+});
+

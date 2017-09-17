@@ -10,9 +10,8 @@ public class PoHeadersAll implements java.io.Serializable {
 
 	// Fields
 
-	private Integer poHeaderId;
+	private PoHeadersAllId id;
 	private String poNum;
-	private Integer venderCode;
 	private Integer status;
 	private Timestamp createTime;
 	private Timestamp achieveTime;
@@ -24,19 +23,19 @@ public class PoHeadersAll implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public PoHeadersAll(String poNum, Integer venderCode, Integer status,
+	public PoHeadersAll(PoHeadersAllId id, String poNum, Integer status,
 			Timestamp createTime) {
+		this.id = id;
 		this.poNum = poNum;
-		this.venderCode = venderCode;
 		this.status = status;
 		this.createTime = createTime;
 	}
 
 	/** full constructor */
-	public PoHeadersAll(String poNum, Integer venderCode, Integer status,
+	public PoHeadersAll(PoHeadersAllId id, String poNum, Integer status,
 			Timestamp createTime, Timestamp achieveTime) {
+		this.id = id;
 		this.poNum = poNum;
-		this.venderCode = venderCode;
 		this.status = status;
 		this.createTime = createTime;
 		this.achieveTime = achieveTime;
@@ -44,12 +43,12 @@ public class PoHeadersAll implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getPoHeaderId() {
-		return this.poHeaderId;
+	public PoHeadersAllId getId() {
+		return this.id;
 	}
 
-	public void setPoHeaderId(Integer poHeaderId) {
-		this.poHeaderId = poHeaderId;
+	public void setId(PoHeadersAllId id) {
+		this.id = id;
 	}
 
 	public String getPoNum() {
@@ -58,14 +57,6 @@ public class PoHeadersAll implements java.io.Serializable {
 
 	public void setPoNum(String poNum) {
 		this.poNum = poNum;
-	}
-
-	public Integer getVenderCode() {
-		return this.venderCode;
-	}
-
-	public void setVenderCode(Integer venderCode) {
-		this.venderCode = venderCode;
 	}
 
 	public Integer getStatus() {

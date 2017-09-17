@@ -39,7 +39,8 @@
 				<value>bean/MtlItemsAll.hbm.xml</value>
 				<value>bean/MtlOnHand.hbm.xml</value>
 				<value>bean/HrPerson.hbm.xml</value>
-				<value>bean/PoSaveFrom.hbm.xml</value></list>
+				<value>bean/PoSaveFrom.hbm.xml</value>
+				<value>bean/User.hbm.xml</value></list>
 		</property></bean>
 	<!-- 业务层配置 -->
 	<bean id="PersonService" class="service.PersonService">
@@ -48,13 +49,26 @@
 	<bean id="itemService" class="service.ItemService">
 	<property name="mtlItemsAllDAO" ref="MtlItemsAllDAO"></property>
 	</bean>
+	<bean id="poSaveService" class="service.PoSaveService">
+	<property name="poSaveFromDAO" ref="PoSaveFromDAO"></property>
+	</bean>
+	<bean id="userService" class="service.LoginService">
+	<property name="userDAO" ref="UserDAO"></property>
+	 </bean>
 	<!-- 配置action -->
 	<bean id="hrPersonAction" class="action.hrPersonAction">
 		<property name="personService" ref="PersonService"></property>
 	</bean>
 	<bean id="itemAction" class="action.itemAction">
-	<property name="itemService" ref="ItemService"></property>
+	<property name="itemService" ref="itemService"></property>
 	</bean>
+	<bean id="poSaveAction" class="action.poSaveAction">
+	<property name="poSaveService" ref="poSaveService"></property>
+	</bean>
+	<bean id="loginAction" class="action.loginAction">
+	<property name="userService" ref="userService"></property>
+	</bean>
+	
 	<!-- 逻辑层配置 -->
 	<bean
 		id="PoVendersAllDAO" class="dao.PoVendersAllDAO">
@@ -92,10 +106,17 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean
+		id="UserDAO" class="dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+    </bean>
 	<!-- 配置事务逻辑 -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<!-- 开启事务逻辑 -->
-	<tx:annotation-driven transaction-manager="transactionManager" /></beans>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	</beans>

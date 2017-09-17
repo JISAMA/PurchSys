@@ -23,7 +23,7 @@ import bean.PoHeadersAll;
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see bean.PoHeadersAll
+ * @see dao.PoHeadersAll
  * @author MyEclipse Persistence Tools
  */
 @Transactional
@@ -32,7 +32,6 @@ public class PoHeadersAllDAO {
 			.getLogger(PoHeadersAllDAO.class);
 	// property constants
 	public static final String PO_NUM = "poNum";
-	public static final String VENDER_CODE = "venderCode";
 	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
@@ -75,7 +74,7 @@ public class PoHeadersAllDAO {
 		log.debug("getting PoHeadersAll instance with id: " + id);
 		try {
 			PoHeadersAll instance = (PoHeadersAll) getCurrentSession().get(
-					"bean.PoHeadersAll", id);
+					"dao.PoHeadersAll", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -87,7 +86,7 @@ public class PoHeadersAllDAO {
 		log.debug("finding PoHeadersAll instance by example");
 		try {
 			List results = getCurrentSession()
-					.createCriteria("bean.PoHeadersAll")
+					.createCriteria("dao.PoHeadersAll")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
@@ -115,10 +114,6 @@ public class PoHeadersAllDAO {
 
 	public List findByPoNum(Object poNum) {
 		return findByProperty(PO_NUM, poNum);
-	}
-
-	public List findByVenderCode(Object venderCode) {
-		return findByProperty(VENDER_CODE, venderCode);
 	}
 
 	public List findByStatus(Object status) {

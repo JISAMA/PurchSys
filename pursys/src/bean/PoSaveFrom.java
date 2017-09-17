@@ -11,7 +11,6 @@ public class PoSaveFrom implements java.io.Serializable {
 	private Integer poPlanCode;
 	private Integer itemNum;
 	private Integer qty;
-	private Integer venderCode;
 	private Integer status;
 
 	// Constructors
@@ -21,12 +20,9 @@ public class PoSaveFrom implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public PoSaveFrom(Integer poPlanCode, Integer itemNum, Integer qty,
-			Integer venderCode, Integer status) {
-		this.poPlanCode = poPlanCode;
+	public PoSaveFrom(Integer itemNum, Integer qty, Integer status) {
 		this.itemNum = itemNum;
 		this.qty = qty;
-		this.venderCode = venderCode;
 		this.status = status;
 	}
 
@@ -54,14 +50,6 @@ public class PoSaveFrom implements java.io.Serializable {
 
 	public void setQty(Integer qty) {
 		this.qty = qty;
-	}
-
-	public Integer getVenderCode() {
-		return this.venderCode;
-	}
-
-	public void setVenderCode(Integer venderCode) {
-		this.venderCode = venderCode;
 	}
 
 	public Integer getStatus() {

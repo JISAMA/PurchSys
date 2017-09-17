@@ -22,7 +22,7 @@ import bean.PoSaveFrom;
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see bean.PoSaveFrom
+ * @see dao.PoSaveFrom
  * @author MyEclipse Persistence Tools
  */
 @Transactional
@@ -32,7 +32,6 @@ public class PoSaveFromDAO {
 	// property constants
 	public static final String ITEM_NUM = "itemNum";
 	public static final String QTY = "qty";
-	public static final String VENDER_CODE = "venderCode";
 	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
@@ -75,7 +74,7 @@ public class PoSaveFromDAO {
 		log.debug("getting PoSaveFrom instance with id: " + id);
 		try {
 			PoSaveFrom instance = (PoSaveFrom) getCurrentSession().get(
-					"bean.PoSaveFrom", id);
+					"dao.PoSaveFrom", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -86,8 +85,7 @@ public class PoSaveFromDAO {
 	public List findByExample(PoSaveFrom instance) {
 		log.debug("finding PoSaveFrom instance by example");
 		try {
-			List results = getCurrentSession()
-					.createCriteria("bean.PoSaveFrom")
+			List results = getCurrentSession().createCriteria("dao.PoSaveFrom")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
@@ -119,10 +117,6 @@ public class PoSaveFromDAO {
 
 	public List findByQty(Object qty) {
 		return findByProperty(QTY, qty);
-	}
-
-	public List findByVenderCode(Object venderCode) {
-		return findByProperty(VENDER_CODE, venderCode);
 	}
 
 	public List findByStatus(Object status) {

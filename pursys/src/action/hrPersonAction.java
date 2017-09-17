@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import service.PersonService;
+import bean.HrPerson;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -18,10 +19,17 @@ public class hrPersonAction extends ActionSupport implements ModelDriven<Person>
 	private HttpServletRequest request;
 	private PersonService personService;
 	private List<Person> persons;
+	private String id;
+	private HrPerson p;
 	
 	public String findAllPerson(){
 		persons=personService.findAll();
+		
 		return SUCCESS;
+	}
+	public String findByid(){
+		p=personService.findById(id);
+		return "id";
 	}
 
 	@Override
@@ -44,13 +52,27 @@ public class hrPersonAction extends ActionSupport implements ModelDriven<Person>
 		this.personService = personService;
 	}
 
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public HrPerson getP() {
+		return p;
+	}
+	public void setP(HrPerson p) {
+		this.p = p;
+	}
 	public List<Person> getPersons() {
 		return persons;
 	}
-
 	public void setPersons(List<Person> persons) {
 		this.persons = persons;
 	}
+	
+	
 	
 	
 

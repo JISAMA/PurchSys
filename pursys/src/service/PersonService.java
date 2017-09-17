@@ -13,6 +13,7 @@ public class PersonService {
 	private static Integer FAILDB=2;
 	
 	private HrPersonDAO hrPersonDAO;
+	private HrPerson hrPerson;
 	
 	
 	public int addPerson(HrPerson hrPerson){
@@ -31,6 +32,11 @@ public class PersonService {
 		
 	}
 	
+	public HrPerson findById(String id){
+		hrPerson=hrPersonDAO.findById(id);
+		return hrPerson;
+	}
+	
 
 	
 	public List<Person> findAll(){
@@ -40,6 +46,8 @@ public class PersonService {
 			Person person=new Person();
 			person.setEmpNum(hp.getEmpNum());
 			person.setName(hp.getName());
+//			System.out.println(findById(hp.getManagerEmpNum()).getName());
+//			person.setManagerEmpNum((findById(hp.getManagerEmpNum())).getName());
 			person.setManagerEmpNum(hp.getManagerEmpNum());
 			person.setJob(hp.getJob());
 			person.setDepartment(hp.getDepartment());
@@ -57,6 +65,7 @@ public class PersonService {
 	public void setHrPersonDAO(HrPersonDAO hrPersonDAO) {
 		this.hrPersonDAO = hrPersonDAO;
 	}
+	
 	
 	
 	
